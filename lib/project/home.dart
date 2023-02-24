@@ -52,8 +52,7 @@ class _HomeState extends State<Home> {
       appStoreIdentifier: '1582638369',
     );
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
-
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       await rateMyApp.init();
       rateMyApp.conditions.forEach((condition) {
         if (condition is DebuggableCondition) {
