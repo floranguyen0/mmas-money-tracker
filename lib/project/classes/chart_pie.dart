@@ -39,7 +39,7 @@ class ChartPie extends StatelessWidget {
             startAngle: 90,
             endAngle: 90,
             animationDuration: animationDuration,
-            enableSmartLabels: haveRecords,
+            // enableSmartLabels: haveRecords,
             sortingOrder: SortingOrder.descending,
             sortFieldValueMapper: (InputModel data, _) => data.category,
             enableTooltip: haveRecords,
