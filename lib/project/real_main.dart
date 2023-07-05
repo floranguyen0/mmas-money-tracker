@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       return ScreenUtilInit(
         designSize: Size(428.0, 926.0),
-        builder: () => MaterialApp(
+        builder: (_, child) => MaterialApp(
           title: 'MMAS',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
