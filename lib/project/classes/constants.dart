@@ -101,6 +101,7 @@ Widget? connectionUI(AsyncSnapshot<List<InputModel>> snapshot) {
       child: CircularProgressIndicator(),
     );
   }
+  return null;
 }
 
 List<CategoryItem> createItemList({
