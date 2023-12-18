@@ -663,7 +663,7 @@ class _DateCardState extends State<DateCard> {
                 _pc.close();
               }
               Navigator.of(context).push(
-                showPicker(
+               showPicker(
                     cancelText: getTranslated(context, 'Cancel') ?? 'Cancel',
                     okText: getTranslated(context, 'Ok') ?? 'Ok',
                     unselectedColor: grey,
