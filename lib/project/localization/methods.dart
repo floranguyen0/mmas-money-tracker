@@ -14,6 +14,8 @@ Locale locale(String languageCode) {
       return Locale('es', 'ES');
     case 'fr':
       return Locale('fr', "FR");
+    case 'ne':
+      return Locale('ne', "NP");
     case 'hi':
       return Locale('hi', "IN");
     case 'ja':

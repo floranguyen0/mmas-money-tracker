@@ -24,6 +24,7 @@ class Language {
     Language(4, "🇪🇸", "Español", "es", 'ES', '€', 'EUR', 'Euro'),
     Language(5, "🇫🇷", "Français", "fr", 'FR', '€', 'EUR', 'Euro'),
     Language(6, "🇮🇳", "हिन्दी", "hi", 'IN', '₹', 'INR', 'Indian Rupee'),
+    Language(6, "🇳🇵", "नेपाली", "ne", 'NP', 'रु', 'NPR', 'Nepali Rupee'),
     Language(7, "🇯🇵", "日本語", "ja", 'JP', '¥', 'JPY', 'Japanese Yen'),
     Language(8, "🇰🇷", "한국어", "ko", 'KR', '₩', 'KRW', 'South Korean Won'),
     Language(9, "🇵🇹", "Português", "pt", 'PT', '€', 'EUR', 'Euro'),

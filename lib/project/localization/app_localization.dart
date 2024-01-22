@@ -43,6 +43,7 @@ class _DemoLocalizationsDelegate
       'de',
       'es',
       'fr',
+      'ne',
       'hi',
       'ja',
       'ko',
