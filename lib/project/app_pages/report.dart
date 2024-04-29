@@ -240,8 +240,8 @@ class _ReportBodyState extends State<ReportBody> {
                                   width: 4.h,
                                 ),
                                 majorTickLines: MajorTickLines(size: 5.sp)),
-                            series: _getGradientAreaSeries(
-                                this.widget.type, monthBasedTransactionList),
+                            // series: _getGradientAreaSeries(
+                            //     this.widget.type, monthBasedTransactionList),
                             onMarkerRender: (MarkerRenderArgs args) {
                               if (this.widget.type == 'Income') {
                                 if (args.pointIndex == 0) {
@@ -432,8 +432,8 @@ class _ReportBodyState extends State<ReportBody> {
                                                   key: ObjectKey(
                                                       selectedTransactions[
                                                           int]),
-                                                  performsFirstActionWithFullSwipe:
-                                                      true,
+                                                  // performsFirstActionWithFullSwipe:
+                                                  //     true,
                                                   trailingActions: <
                                                       SwipeAction>[
                                                     SwipeAction(
