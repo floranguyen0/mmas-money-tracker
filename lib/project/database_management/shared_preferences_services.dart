@@ -191,9 +191,8 @@ class SharedPrefs {
         categoryItem(MdiIcons.dogService, 'Pets'),
         categoryItem(MdiIcons.tableChair, 'Furnishings'),
         categoryItem(MdiIcons.autoFix, 'Home Services'),
-        categoryItem(MdiIcons.currencyUsd, 'Mortgage & Rent'),
+        categoryItem(MdiIcons.homeCurrencyUsd, 'Mortgage & Rent'),
       ]);
-
 
       saveItems('Utility Bills', [
         categoryItem(FontAwesomeIcons.fileInvoiceDollar, 'Utility Bills'),

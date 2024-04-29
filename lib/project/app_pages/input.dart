@@ -647,8 +647,9 @@ class _DateCardState extends State<DateCard> {
                   ),
                 ),
                 Text(
-                  DateFormat(sharedPrefs.dateFormat)
-                      .format(DateFormat('dd/MM/yyyy').parse(model.date!)),
+                  DateFormat(sharedPrefs.dateFormat).format(
+                      DateFormat('dd/MM/yyyy').parse(
+                          model.date!)),
                   style: GoogleFonts.aBeeZee(
                     fontSize: 21.5.sp,
                   ),
@@ -665,22 +666,19 @@ class _DateCardState extends State<DateCard> {
               }
               Navigator.of(context).push(
                 showPicker(
-                  cancelText: getTranslated(context, 'Cancel') ?? 'Cancel',
-                  okText: getTranslated(context, 'Ok') ?? 'Ok',
-                  unselectedColor: grey,
-                  dialogInsetPadding:
-                      EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.0.h),
-                  elevation: 12,
-                  context: context,
-                  value: timeOfDayToTime(
-                      selectedTime), // Convert TimeOfDay to Time
-                  is24HrFormat: true,
-                  onChange: (value) => setState(() {
-                    selectedTime =
-                        TimeOfDay(hour: value.hour, minute: value.minute);
-                    model.time = selectedTime.format(context);
-                  }),
-                ),
+                    cancelText: getTranslated(context, 'Cancel') ?? 'Cancel',
+                    okText: getTranslated(context, 'Ok') ?? 'Ok',
+                    unselectedColor: grey,
+                    dialogInsetPadding: EdgeInsets.symmetric(
+                        horizontal: 50.w, vertical: 30.0.h),
+                    elevation: 12,
+                    context: context,
+                    value: selectedTime,
+                    is24HrFormat: true,
+                    onChange: (value) => setState(() {
+                          selectedTime = value;
+                          model.time = value.format(context);
+                        })),
               );
             },
             child: Text(
@@ -694,13 +692,6 @@ class _DateCardState extends State<DateCard> {
       ),
     );
   }
-}
-
-Time timeOfDayToTime(TimeOfDay timeOfDay) {
-  return Time(
-    hour: timeOfDay.hour,
-    minute: timeOfDay.minute,
-  );
 }
 
 void saveInputFunc(BuildContext context, bool saveFunction) {
@@ -718,10 +709,7 @@ void saveInputFunc(BuildContext context, bool saveFunction) {
   } else {
     DB.update(model);
     Navigator.pop(context);
-    customToast(
-        context,
-        getTranslated(context, 'Transaction has been updated') ??
-            'Transaction has been updated');
+    customToast(context, getTranslated(context, 'Transaction has been updated') ?? 'Transaction has been updated');
   }
 }
 

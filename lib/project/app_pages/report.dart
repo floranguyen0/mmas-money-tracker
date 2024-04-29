@@ -21,7 +21,7 @@ import 'dart:io' show Platform;
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import 'edit.dart';
-import 'dart:io';
+
 var year = todayDT.year;
 
 class Report extends StatefulWidget {
@@ -35,7 +35,6 @@ class Report extends StatefulWidget {
     required this.selectedDate,
     required this.icon,
   });
-
 
   @override
   _ReportState createState() => _ReportState();
@@ -94,26 +93,13 @@ class ReportBody extends StatefulWidget {
   final String selectedDate;
   final Color color;
   final IconData icon;
-
-  ReportBody(this.type, this.category, this.selectedDate, this.color,
-      this.icon);
-
+  ReportBody(
+      this.type, this.category, this.selectedDate, this.color, this.icon);
   @override
   _ReportBodyState createState() => _ReportBodyState();
-
-  List<CartesianSeries<dynamic, dynamic>> _getGradientAreaSeries(String type,
-      List<MonthAmount> monthAmountList) {
-    return <CartesianSeries<dynamic, dynamic>>[
-      SplineAreaSeries<MonthAmount, String>(
-        dataSource: monthAmountList,
-        xValueMapper: (MonthAmount monthAmount, _) => monthAmount.month,
-        yValueMapper: (MonthAmount monthAmount, _) => monthAmount.amount,
-      ),
-    ];
-  }
 }
 
-  class _ReportBodyState extends State<ReportBody> {
+class _ReportBodyState extends State<ReportBody> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -225,8 +211,6 @@ class ReportBody extends StatefulWidget {
                     }
                   }
 
-
-
                   return Column(
                     children: [
                       Padding(
@@ -256,8 +240,8 @@ class ReportBody extends StatefulWidget {
                                   width: 4.h,
                                 ),
                                 majorTickLines: MajorTickLines(size: 5.sp)),
-                            // series: _getGradientAreaSeries(
-                            //     this.widget.type, monthBasedTransactionList),
+                            series: _getGradientAreaSeries(
+                                this.widget.type, monthBasedTransactionList),
                             onMarkerRender: (MarkerRenderArgs args) {
                               if (this.widget.type == 'Income') {
                                 if (args.pointIndex == 0) {
@@ -448,8 +432,8 @@ class ReportBody extends StatefulWidget {
                                                   key: ObjectKey(
                                                       selectedTransactions[
                                                           int]),
-                                                  // performsFirstActionWithFullSwipe:
-                                                  //     true,
+                                                  performsFirstActionWithFullSwipe:
+                                                      true,
                                                   trailingActions: <
                                                       SwipeAction>[
                                                     SwipeAction(
