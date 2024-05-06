@@ -33,5 +33,6 @@ class Language {
     Language(
         12, "🇻🇳", "Tiếng Việt", "vi", 'VN', '₫', 'VND', 'Vietnamese Dong'),
     Language(13, "🇨🇳", "中文", "zh", 'CN', '¥', 'CNY', 'Chinese Yuan'),
+        Language(14, "🇳🇵", "नेपाली", "ne", 'NP', 'रु', 'NPR', 'Nepali Rupee'),
   ];
 }

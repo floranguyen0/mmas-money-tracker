@@ -30,6 +30,8 @@ Locale locale(String languageCode) {
       return Locale('vi', "VN");
     case 'zh':
       return Locale('zh', "CN");
+    case 'ne':
+      return Locale('ne', "NP");
     default:
       return Locale('en', 'US');
   }

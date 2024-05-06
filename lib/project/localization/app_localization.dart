@@ -50,7 +50,8 @@ class _DemoLocalizationsDelegate
       'ru',
       'tr',
       'vi',
-      'zh'
+      'zh',
+      'ne'
     ].contains(locale.languageCode);
   }
 
