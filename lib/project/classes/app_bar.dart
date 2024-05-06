@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:money_assistant_2608/project/localization/methods.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

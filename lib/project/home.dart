@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:money_assistant_2608/project/classes/constants.dart';
 import 'package:money_assistant_2608/project/database_management/sqflite_services.dart';
@@ -52,7 +49,7 @@ class _HomeState extends State<Home> {
       appStoreIdentifier: '1582638369',
     );
 
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
 
       await rateMyApp.init();
       rateMyApp.conditions.forEach((condition) {
