@@ -1,7 +1,5 @@
-import 'dart:ui';
 import 'package:provider/provider.dart';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:money_assistant_2608/project/database_management/shared_preferences_services.dart';
 import 'package:money_assistant_2608/project/localization/methods.dart';

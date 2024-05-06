@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boxicons/flutter_boxicons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -191,7 +189,7 @@ class SharedPrefs {
         categoryItem(MdiIcons.dogService, 'Pets'),
         categoryItem(MdiIcons.tableChair, 'Furnishings'),
         categoryItem(MdiIcons.autoFix, 'Home Services'),
-        categoryItem(MdiIcons.homeCurrencyUsd, 'Mortgage & Rent'),
+        categoryItem(MdiIcons.currencyUsd, 'Mortgage & Rent'),
       ]);
 
       saveItems('Utility Bills', [
