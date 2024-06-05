@@ -111,9 +111,12 @@ class _ReportBodyState extends State<ReportBody> {
               builder: (BuildContext context,
                   AsyncSnapshot<List<InputModel>> snapshot) {
                 connectionUI(snapshot);
-                if (snapshot.data == null ||
-                    snapshot.connectionState == ConnectionState.waiting) {
-                  return SizedBox();
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return Center(child: Text('No data found'));
                 } else {
                   double yearAmount = 0;
                   DateTime date(int duration) =>
@@ -122,7 +125,6 @@ class _ReportBodyState extends State<ReportBody> {
                     return (year % 4 == 0) && (year % 100 != 0) ||
                         (year % 400 == 0);
                   }
-
                   // widget.transactions.sort((a, b) => a.date!.compareTo(b.date!));
                   List<InputModel> sortByCategory(
                       List<InputModel> data, String type) {
