@@ -111,9 +111,12 @@ class _ReportBodyState extends State<ReportBody> {
               builder: (BuildContext context,
                   AsyncSnapshot<List<InputModel>> snapshot) {
                 connectionUI(snapshot);
-                if (snapshot.data == null ||
-                    snapshot.connectionState == ConnectionState.waiting) {
-                  return SizedBox();
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return Center(child: Text('No data found'));
                 } else {
                   double yearAmount = 0;
                   DateTime date(int duration) =>
@@ -122,7 +125,6 @@ class _ReportBodyState extends State<ReportBody> {
                     return (year % 4 == 0) && (year % 100 != 0) ||
                         (year % 400 == 0);
                   }
-
                   // widget.transactions.sort((a, b) => a.date!.compareTo(b.date!));
                   List<InputModel> sortByCategory(
                       List<InputModel> data, String type) {
@@ -240,8 +242,8 @@ class _ReportBodyState extends State<ReportBody> {
                                   width: 4.h,
                                 ),
                                 majorTickLines: MajorTickLines(size: 5.sp)),
-                            series: _getGradientAreaSeries(
-                                this.widget.type, monthBasedTransactionList),
+                            // series: _getGradientAreaSeries(
+                            //     this.widget.type, monthBasedTransactionList),
                             onMarkerRender: (MarkerRenderArgs args) {
                               if (this.widget.type == 'Income') {
                                 if (args.pointIndex == 0) {
@@ -432,8 +434,8 @@ class _ReportBodyState extends State<ReportBody> {
                                                   key: ObjectKey(
                                                       selectedTransactions[
                                                           int]),
-                                                  performsFirstActionWithFullSwipe:
-                                                      true,
+                                                  // performsFirstActionWithFullSwipe:
+                                                  //     true,
                                                   trailingActions: <
                                                       SwipeAction>[
                                                     SwipeAction(

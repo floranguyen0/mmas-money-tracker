@@ -101,7 +101,7 @@ class _CalendarBodyState extends State<CalendarBody> {
               },
               child: SwipeActionCell(
                 key: ObjectKey(transactions[int]),
-                performsFirstActionWithFullSwipe: true,
+                // performsFirstActionWithFullSwipe: true,
                 trailingActions: <SwipeAction>[
                   SwipeAction(
                       title: getTranslated(context, 'Delete') ?? 'Delete',
@@ -449,32 +449,34 @@ class _BalanceState extends State<Balance> {
         balance = income - expense;
       }
     }
-    Widget summaryFrame(String type, double amount, color) => Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // this widget will never overflow
-            Text(
-              getTranslated(context, type)!,
-              style: TextStyle(
-                  color: color,
-                  fontSize: 15.sp,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold),
-            ),
-            Text(format(amount.toDouble()) + ' ' + currency,
-                style: GoogleFonts.aBeeZee(
+    Widget summaryFrame(String type, double amount, color) => SingleChildScrollView(
+      child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // this widget will never overflow
+              Text(
+                getTranslated(context, type)!,
+                style: TextStyle(
                     color: color,
-                    fontSize: (format(amount.toDouble()).length > 19)
-                        ? 11.5.sp
-                        : format(amount.toDouble()).length > 14
-                            ? 14.sp
-                            : 18.sp,
+                    fontSize: 15.sp,
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis)
-          ],
-        );
+              ),
+              Text(format(amount.toDouble()) + ' ' + currency,
+                  style: GoogleFonts.aBeeZee(
+                      color: color,
+                      fontSize: (format(amount.toDouble()).length > 19)
+                          ? 11.5.sp
+                          : format(amount.toDouble()).length > 14
+                              ? 14.sp
+                              : 18.sp,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.ellipsis)
+            ],
+          ),
+    );
     return Container(
       color: Colors.white54,
       height: 69.h,

@@ -24,8 +24,8 @@ class SignIn extends StatelessWidget {
     );
     return FlutterLogin(
       title: 'MMAS',
-      logo: 'Hi!',
-      onSignup: _authenticateUsers,
+      // logo: 'Hi!',
+      // onSignup: _authenticateUsers,
       onLogin: _authenticateUsers,
       onRecoverPassword: _onRecoverPassword,
       onSubmitAnimationCompleted: () {
@@ -68,14 +68,17 @@ class SignIn extends StatelessWidget {
         ),
         LoginProvider(
           icon: FontAwesomeIcons.linkedinIn,
+          label: 'Linkdein',
           callback: () async {
-            print('start linkdin sign in');
+            // print('start linkdin sign in');
+
             await Future.delayed(Duration(seconds: 1));
             print('stop linkdin sign in');
             return null;
           },
         ),
         LoginProvider(
+    label: 'Github',
           icon: FontAwesomeIcons.githubAlt,
           callback: () async {
             print('start github sign in');

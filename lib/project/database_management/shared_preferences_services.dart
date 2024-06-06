@@ -102,7 +102,7 @@ class SharedPrefs {
 
   void saveItems(String parentItemName, List<CategoryItem> items) {
     List<String> itemsEncoded =
-        items.map((item) => jsonEncode(item.toJson())).toList();
+    items.map((item) => jsonEncode(item.toJson())).toList();
 
     _sharedPrefs!.setStringList(parentItemName, itemsEncoded);
   }
@@ -111,7 +111,7 @@ class SharedPrefs {
     List<List<CategoryItem>> expenseItemsLists = [];
     for (int i = 0; i < this.parentExpenseItemNames.length; i++) {
       var parentExpenseItem =
-          sharedPrefs.getItems(this.parentExpenseItemNames[i]);
+      sharedPrefs.getItems(this.parentExpenseItemNames[i]);
       expenseItemsLists.add(parentExpenseItem);
     }
     return expenseItemsLists;
@@ -191,8 +191,9 @@ class SharedPrefs {
         categoryItem(MdiIcons.dogService, 'Pets'),
         categoryItem(MdiIcons.tableChair, 'Furnishings'),
         categoryItem(MdiIcons.autoFix, 'Home Services'),
-        categoryItem(MdiIcons.homeCurrencyUsd, 'Mortgage & Rent'),
+        categoryItem(MdiIcons.currencyUsd, 'Mortgage & Rent'),
       ]);
+
 
       saveItems('Utility Bills', [
         categoryItem(FontAwesomeIcons.fileInvoiceDollar, 'Utility Bills'),
